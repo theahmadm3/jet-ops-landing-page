@@ -197,7 +197,7 @@ export default function CinematicHero() {
                         <div className="accent-line"></div>
 
                         <div style={{ paddingLeft: '32px' }}>
-                            <h1 className="hero-title text-5xl md:text-7xl text-whitesmoke mb-6">
+                            <h1 className="hero-title text-5xl md:text-7xl text-white mb-6">
                                 Private Aviation,
                                 <br />
                                 <span style={{ fontWeight: 600 }}>Simplified.</span>
@@ -254,7 +254,7 @@ export default function CinematicHero() {
                         <div
                             key={index}
                             className={`h-1 rounded-full transition-all duration-500 ${index === current
-                                ? 'w-12 bg-linear-to-r from-orange-500 to-orange-300'
+                                ? 'w-12 bg-linear-to-r from-gold to-luxuryBlack'
                                 : 'w-8 bg-white/30'
                                 }`}
                         />

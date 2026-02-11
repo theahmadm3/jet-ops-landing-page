@@ -11,9 +11,9 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="bg-whitesmoke">
+    <div className="bg-whitesmoke w-full">
       <Header />
-      <main>
+      <main className="max-w-7xl w-full mx-auto">
         <CinematicHero />
         <Hero />
         <HowItWorks />
