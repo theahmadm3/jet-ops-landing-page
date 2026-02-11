@@ -39,10 +39,6 @@ export default function FlightForm() {
                 .form-field:nth-child(3) { animation-delay: 0.2s; }
                 .form-field:nth-child(4) { animation-delay: 0.25s; }
                 .form-field:nth-child(5) { animation-delay: 0.3s; }
-                .form-field:nth-child(6) { animation-delay: 0.35s; }
-                .form-field:nth-child(7) { animation-delay: 0.4s; }
-                .form-field:nth-child(8) { animation-delay: 0.45s; }
-                .form-field:nth-child(9) { animation-delay: 0.5s; }
                 
                 @keyframes fadeInField {
                     to {
@@ -98,7 +94,7 @@ export default function FlightForm() {
                     overflow: hidden;
                     opacity: 0;
                     transform: translateY(20px);
-                    animation: fadeInField 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+                    animation: fadeInField 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
                 }
                 
                 .submit-button::before {
@@ -126,8 +122,9 @@ export default function FlightForm() {
                 }
             `}</style>
 
-            <form onSubmit={handleSubmit} className="form-container grid gap-5">
-                <div className="form-field">
+            <form onSubmit={handleSubmit} className="form-container grid gap-4">
+                {/* Flight Route - From/To */}
+                <div className="form-field grid grid-cols-2 gap-4">
                     <TextField
                         label="From (City or Airport)"
                         fullWidth
@@ -135,9 +132,6 @@ export default function FlightForm() {
                         onFocus={() => handleFocus('from')}
                         onBlur={() => handleBlur('from')}
                     />
-                </div>
-
-                <div className="form-field">
                     <TextField
                         label="To (City or Airport)"
                         fullWidth
@@ -147,7 +141,8 @@ export default function FlightForm() {
                     />
                 </div>
 
-                <div className="form-field">
+                {/* Date and Passengers */}
+                <div className="form-field grid grid-cols-2 gap-4">
                     <TextField
                         type="date"
                         label="Departure Date"
@@ -157,9 +152,6 @@ export default function FlightForm() {
                         onFocus={() => handleFocus('date')}
                         onBlur={() => handleBlur('date')}
                     />
-                </div>
-
-                <div className="form-field">
                     <TextField
                         type="number"
                         label="Passengers (PAX)"
@@ -170,6 +162,7 @@ export default function FlightForm() {
                     />
                 </div>
 
+                {/* Aircraft Preference - Full Width */}
                 <div className="form-field">
                     <TextField
                         label="Aircraft Preference (optional)"
@@ -180,7 +173,8 @@ export default function FlightForm() {
                     />
                 </div>
 
-                <div className="form-field">
+                {/* Contact Info - Name/Email */}
+                <div className="form-field grid grid-cols-2 gap-4">
                     <TextField
                         label="Name"
                         fullWidth
@@ -188,9 +182,6 @@ export default function FlightForm() {
                         onFocus={() => handleFocus('name')}
                         onBlur={() => handleBlur('name')}
                     />
-                </div>
-
-                <div className="form-field">
                     <TextField
                         label="Email"
                         type="email"
@@ -201,6 +192,7 @@ export default function FlightForm() {
                     />
                 </div>
 
+                {/* Phone - Full Width */}
                 <div className="form-field">
                     <TextField
                         label="Phone"

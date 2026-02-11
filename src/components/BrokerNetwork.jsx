@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Button from "@mui/material/Button";
-import planeImage from "../assets/planes/plane2.png";
+import planeImage from "../assets/planes/plane2.jpg";
 
 export default function BrokerNetwork() {
     const [isVisible, setIsVisible] = useState(false);
@@ -231,8 +231,8 @@ export default function BrokerNetwork() {
                     opacity: 0.4;
                 }
             `}</style>
-            
-            <section 
+
+            <section
                 className="broker-section max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center"
                 ref={sectionRef}
             >

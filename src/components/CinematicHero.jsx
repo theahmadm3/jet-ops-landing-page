@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 
 const images = [
     "/src/assets/planes/plane1.jpg",
-    "/src/assets/planes/plane2.png",
+    "/src/assets/planes/plane2.jpg",
     "/src/assets/planes/plane3.jpg",
 ];
 
@@ -113,11 +113,10 @@ export default function CinematicHero() {
                 .hero-overlay {
                     background: linear-gradient(
                         135deg,
-                        rgba(0, 0, 0, 0.7) 0%,
-                        rgba(34, 34, 34, 0.5) 50%,
-                        rgba(250, 129, 18, 0.2) 100%
+                        rgba(0, 0, 0, 0.6) 0%,
+                        rgba(34, 34, 34, 0.4) 50%,
+                        rgba(250, 129, 18, 0.15) 100%
                     );
-                    backdrop-filter: blur(2px);
                 }
                 
                 .accent-line {
@@ -182,12 +181,12 @@ export default function CinematicHero() {
                 ))}
 
                 {/* Floating Dots */}
-                {/* <div className="floating-dots">
+                <div className="floating-dots">
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
                     <div className="dot"></div>
-                </div> */}
+                </div>
 
                 {/* Overlay */}
                 <div className="hero-overlay absolute inset-0" />
@@ -198,7 +197,7 @@ export default function CinematicHero() {
                         <div className="accent-line"></div>
 
                         <div style={{ paddingLeft: '32px' }}>
-                            <h1 className="hero-title text-5xl md:text-7xl text-white mb-6">
+                            <h1 className="hero-title text-5xl md:text-7xl text-whitesmoke mb-6">
                                 Private Aviation,
                                 <br />
                                 <span style={{ fontWeight: 600 }}>Simplified.</span>
@@ -215,7 +214,7 @@ export default function CinematicHero() {
                                     variant="contained"
                                     className="luxury-button-primary"
                                     sx={{
-                                        color: "#fff",
+                                        color: "#222222",
                                         fontFamily: "'Montserrat', sans-serif",
                                         fontWeight: 600,
                                         letterSpacing: '0.5px',
