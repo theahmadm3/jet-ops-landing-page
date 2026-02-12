@@ -9,6 +9,7 @@ const images = [
 
 export default function CinematicHero() {
     const [current, setCurrent] = useState(0);
+    // eslint-disable-next-line no-unused-vars
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -70,8 +71,8 @@ export default function CinematicHero() {
                 .luxury-button-primary {
                     position: relative;
                     overflow: hidden;
-                    background: linear-gradient(135deg, #FA8112 0%, #FFB366 100%) !important;
-                    box-shadow: 0 8px 30px rgba(250, 129, 18, 0.4);
+                    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%) !important;
+                    box-shadow: 0 8px 30px color-mix(in srgb, var(--color-gold) 40%, transparent);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                 }
                 
@@ -91,7 +92,7 @@ export default function CinematicHero() {
                 }
                 
                 .luxury-button-primary:hover {
-                    box-shadow: 0 12px 40px rgba(250, 129, 18, 0.6) !important;
+                    box-shadow: 0 12px 40px color-mix(in srgb, var(--color-gold) 60%, transparent) !important;
                     transform: translateY(-3px);
                 }
                 
@@ -115,7 +116,7 @@ export default function CinematicHero() {
                         135deg,
                         rgba(0, 0, 0, 0.6) 0%,
                         rgba(34, 34, 34, 0.4) 50%,
-                        rgba(250, 129, 18, 0.15) 100%
+                        color-mix(in srgb, var(--color-gold) 15%, transparent) 100%
                     );
                 }
                 
@@ -125,7 +126,7 @@ export default function CinematicHero() {
                     top: 0;
                     width: 4px;
                     height: 0;
-                    background: linear-gradient(180deg, #FA8112, #FFB366);
+                    background: linear-gradient(180deg, var(--color-gold), var(--color-gold-dark));
                     animation: lineGrow 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
                 }
                 
@@ -147,7 +148,7 @@ export default function CinematicHero() {
                     position: absolute;
                     width: 3px;
                     height: 3px;
-                    background: rgba(250, 129, 18, 0.4);
+                    background: color-mix(in srgb, var(--color-gold) 40%, transparent);
                     border-radius: 50%;
                     animation: float 8s ease-in-out infinite;
                 }
@@ -165,7 +166,7 @@ export default function CinematicHero() {
                 }
             `}</style>
 
-            <section className="relative h-[85vh] w-full overflow-hidden bg-luxuryBlack">
+            <section className="relative h-[85vh] w-full overflow-hidden bg-luxury-black">
                 {/* Background Images */}
                 {images.map((img, index) => (
                     <div
@@ -254,7 +255,7 @@ export default function CinematicHero() {
                         <div
                             key={index}
                             className={`h-1 rounded-full transition-all duration-500 ${index === current
-                                ? 'w-12 bg-linear-to-r from-gold to-luxuryBlack'
+                                ? 'w-12 bg-linear-to-r from-gold to-luxury-black'
                                 : 'w-8 bg-white/30'
                                 }`}
                         />

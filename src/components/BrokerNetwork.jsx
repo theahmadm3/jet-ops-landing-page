@@ -1,3 +1,4 @@
+// BrokerNetwork.jsx
 import { useEffect, useRef, useState } from "react";
 import Button from "@mui/material/Button";
 import planeImage from "../assets/planes/plane2.jpg";
@@ -28,9 +29,16 @@ export default function BrokerNetwork() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .broker-section {
                     position: relative;
-                    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #1a1a1a 100%);
                     overflow: hidden;
                 }
                 
@@ -41,7 +49,7 @@ export default function BrokerNetwork() {
                     left: -50px;
                     width: 400px;
                     height: 400px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.12) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.12) 0%, transparent 70%);
                     border-radius: 50%;
                     pointer-events: none;
                 }
@@ -54,7 +62,7 @@ export default function BrokerNetwork() {
                     right: 0;
                     bottom: 0;
                     background: 
-                        radial-gradient(circle at 80% 20%, rgba(250, 129, 18, 0.08) 0%, transparent 50%);
+                        radial-gradient(circle at 80% 20%, rgba(222, 189, 171, 0.08) 0%, transparent 50%);
                     pointer-events: none;
                 }
                 
@@ -73,7 +81,7 @@ export default function BrokerNetwork() {
                     font-family: 'Cormorant Garamond', serif;
                     font-weight: 600;
                     letter-spacing: 0.5px;
-                    color: #ffffff;
+                    color: var(--whitesmoke);
                     position: relative;
                     display: inline-block;
                 }
@@ -85,7 +93,7 @@ export default function BrokerNetwork() {
                     left: 0;
                     width: 60px;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     border-radius: 2px;
                 }
                 
@@ -99,7 +107,7 @@ export default function BrokerNetwork() {
                     position: relative;
                     padding-left: 28px;
                     margin-bottom: 16px;
-                    color: rgba(255, 255, 255, 0.85);
+                    color: rgba(245, 245, 245, 0.85);
                     font-weight: 400;
                     letter-spacing: 0.3px;
                     opacity: 0;
@@ -124,14 +132,14 @@ export default function BrokerNetwork() {
                     top: 8px;
                     width: 12px;
                     height: 12px;
-                    background: linear-gradient(135deg, #FA8112, #FFB366);
+                    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
                     border-radius: 50%;
-                    box-shadow: 0 2px 8px rgba(250, 129, 18, 0.3);
+                    box-shadow: 0 2px 8px rgba(222, 189, 171, 0.3);
                 }
                 
                 .broker-button {
-                    background: linear-gradient(135deg, #FA8112 0%, #FFB366 100%) !important;
-                    box-shadow: 0 8px 25px rgba(250, 129, 18, 0.35);
+                    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+                    box-shadow: 0 8px 25px rgba(222, 189, 171, 0.35);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                     position: relative;
                     overflow: hidden;
@@ -161,7 +169,7 @@ export default function BrokerNetwork() {
                 }
                 
                 .broker-button:hover {
-                    box-shadow: 0 12px 35px rgba(250, 129, 18, 0.5) !important;
+                    box-shadow: 0 12px 35px rgba(222, 189, 171, 0.5) !important;
                     transform: translateY(-3px);
                 }
                 
@@ -176,7 +184,7 @@ export default function BrokerNetwork() {
                     transform: translateX(40px) scale(0.95);
                     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-                    border: 1px solid rgba(250, 129, 18, 0.2);
+                    border: 1px solid rgba(222, 189, 171, 0.2);
                 }
                 
                 .plane-showcase.visible {
@@ -190,7 +198,7 @@ export default function BrokerNetwork() {
                     inset: 0;
                     background: linear-gradient(
                         135deg,
-                        rgba(250, 129, 18, 0.15) 0%,
+                        rgba(222, 189, 171, 0.15) 0%,
                         transparent 60%
                     );
                     opacity: 0;
@@ -203,8 +211,8 @@ export default function BrokerNetwork() {
                 
                 .plane-showcase:hover {
                     transform: translateX(0) scale(1.02);
-                    box-shadow: 0 25px 70px rgba(250, 129, 18, 0.4);
-                    border-color: rgba(250, 129, 18, 0.4);
+                    box-shadow: 0 25px 70px rgba(222, 189, 171, 0.4);
+                    border-color: rgba(222, 189, 171, 0.4);
                 }
                 
                 .plane-showcase::after {
@@ -224,18 +232,15 @@ export default function BrokerNetwork() {
                     right: 0;
                     bottom: 0;
                     background-image: 
-                        linear-gradient(rgba(250, 129, 18, 0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(250, 129, 18, 0.02) 1px, transparent 1px);
+                        linear-gradient(rgba(222, 189, 171, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(222, 189, 171, 0.02) 1px, transparent 1px);
                     background-size: 50px 50px;
                     pointer-events: none;
                     opacity: 0.4;
                 }
             `}</style>
 
-            <section
-                className="broker-section max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center"
-                ref={sectionRef}
-            >
+            <section className="broker-section max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center" ref={sectionRef}>
                 <div className="grid-background"></div>
                 <div className={`broker-content ${isVisible ? 'visible' : ''}`} style={{ position: 'relative', zIndex: 10 }}>
                     <h2 className="broker-title text-3xl mb-8">

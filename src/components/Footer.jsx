@@ -1,12 +1,20 @@
+// Footer.jsx
 export default function Footer() {
     return (
         <>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap');
+                
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
                 
                 .footer-section {
-                    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-                    border-top: 1px solid rgba(250, 129, 18, 0.15);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #1a1a1a 100%);
+                    border-top: 1px solid rgba(222, 189, 171, 0.15);
                     position: relative;
                     overflow: hidden;
                 }
@@ -18,7 +26,7 @@ export default function Footer() {
                     left: 0;
                     right: 0;
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, rgba(250, 129, 18, 0.5), transparent);
+                    background: linear-gradient(90deg, transparent, rgba(222, 189, 171, 0.5), transparent);
                 }
                 
                 .footer-section::after {
@@ -29,7 +37,7 @@ export default function Footer() {
                     transform: translateX(-50%);
                     width: 600px;
                     height: 600px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.08) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.08) 0%, transparent 70%);
                     border-radius: 50%;
                     pointer-events: none;
                 }
@@ -43,7 +51,7 @@ export default function Footer() {
                 }
                 
                 .footer-logo {
-                    height: 30px; /* Adjust height as needed */
+                    height: 30px;
                 }
                 
                 .footer-text {
@@ -51,7 +59,7 @@ export default function Footer() {
                     font-weight: 300;
                     font-size: 13px;
                     letter-spacing: 0.8px;
-                    color: rgba(255, 255, 255, 0.5);
+                    color: rgba(245, 245, 245, 0.5);
                     text-transform: uppercase;
                 }
                 
@@ -60,7 +68,7 @@ export default function Footer() {
                     font-weight: 400;
                     font-size: 14px;
                     letter-spacing: 0.5px;
-                    color: rgba(255, 179, 102, 0.9);
+                    color: rgba(222, 189, 171, 0.9);
                     position: relative;
                     transition: all 0.3s ease;
                 }
@@ -72,9 +80,9 @@ export default function Footer() {
                     left: 0;
                     width: 0;
                     height: 2px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    box-shadow: 0 0 8px rgba(250, 129, 18, 0.6);
+                    box-shadow: 0 0 8px rgba(222, 189, 171, 0.6);
                 }
                 
                 .footer-email:hover::after {
@@ -82,14 +90,14 @@ export default function Footer() {
                 }
                 
                 .footer-email:hover {
-                    color: #FFB366;
-                    text-shadow: 0 0 20px rgba(250, 129, 18, 0.5);
+                    color: var(--gold);
+                    text-shadow: 0 0 20px rgba(222, 189, 171, 0.5);
                 }
                 
                 .footer-divider {
                     width: 1px;
                     height: 20px;
-                    background: linear-gradient(180deg, transparent, rgba(250, 129, 18, 0.4), transparent);
+                    background: linear-gradient(180deg, transparent, rgba(222, 189, 171, 0.4), transparent);
                     margin: 0 20px;
                 }
                 
@@ -100,8 +108,8 @@ export default function Footer() {
                     right: 0;
                     bottom: 0;
                     background-image: 
-                        linear-gradient(rgba(250, 129, 18, 0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(250, 129, 18, 0.02) 1px, transparent 1px);
+                        linear-gradient(rgba(222, 189, 171, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(222, 189, 171, 0.02) 1px, transparent 1px);
                     background-size: 50px 50px;
                     pointer-events: none;
                     opacity: 0.3;
@@ -113,7 +121,7 @@ export default function Footer() {
                     left: 0;
                     right: 0;
                     height: 3px;
-                    background: linear-gradient(90deg, transparent, #FA8112, #FFB366, #FA8112, transparent);
+                    background: linear-gradient(90deg, transparent, var(--gold-dark), var(--gold), var(--gold-dark), transparent);
                     opacity: 0.4;
                 }
                 
@@ -130,10 +138,7 @@ export default function Footer() {
                 }
             `}</style>
 
-            <footer
-                id="footer"
-                className="footer-section py-12"
-            >
+            <footer id="footer" className="footer-section py-12">
                 <div className="footer-grid"></div>
                 <div className="footer-accent"></div>
                 <div className="max-w-7xl mx-auto px-6">
@@ -146,10 +151,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <a
-                            href="mailto:contact@jetops.africa"
-                            className="footer-email"
-                        >
+                        <a href="mailto:contact@jetops.africa" className="footer-email">
                             contact@jetops.africa
                         </a>
                     </div>

@@ -1,5 +1,5 @@
+// OperatorFeatures.jsx
 import { useEffect, useRef, useState } from "react";
-import FlightIcon from "@mui/icons-material/Flight";
 
 const features = [
     { name: "Aircraft Management", icon: "✈️" },
@@ -38,8 +38,15 @@ export default function OperatorFeatures() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .operator-section {
-                    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #1a1a1a 100%);
                     position: relative;
                     overflow: hidden;
                 }
@@ -52,8 +59,8 @@ export default function OperatorFeatures() {
                     right: 0;
                     bottom: 0;
                     background: 
-                        radial-gradient(circle at 20% 50%, rgba(250, 129, 18, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(250, 129, 18, 0.08) 0%, transparent 50%);
+                        radial-gradient(circle at 20% 50%, rgba(222, 189, 171, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(222, 189, 171, 0.08) 0%, transparent 50%);
                     pointer-events: none;
                 }
                 
@@ -61,7 +68,7 @@ export default function OperatorFeatures() {
                     font-family: 'Cormorant Garamond', serif;
                     font-weight: 400;
                     letter-spacing: 0.5px;
-                    color: #ffffff;
+                    color: var(--whitesmoke);
                     opacity: 0;
                     transform: translateY(30px);
                     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -78,7 +85,7 @@ export default function OperatorFeatures() {
                     display: block;
                     width: 80px;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     margin-top: 16px;
                     border-radius: 2px;
                 }
@@ -86,7 +93,7 @@ export default function OperatorFeatures() {
                 .feature-card {
                     background: rgba(255, 255, 255, 0.03);
                     backdrop-filter: blur(10px);
-                    border: 1px solid rgba(250, 129, 18, 0.15);
+                    border: 1px solid rgba(222, 189, 171, 0.15);
                     border-radius: 8px;
                     padding: 32px 24px;
                     position: relative;
@@ -117,7 +124,7 @@ export default function OperatorFeatures() {
                     left: -50%;
                     width: 200%;
                     height: 200%;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.1) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.1) 0%, transparent 70%);
                     opacity: 0;
                     transition: opacity 0.5s ease;
                 }
@@ -128,16 +135,16 @@ export default function OperatorFeatures() {
                 
                 .feature-card:hover {
                     transform: translateY(-12px) scale(1.02);
-                    border-color: rgba(250, 129, 18, 0.4);
-                    background: rgba(250, 129, 18, 0.08);
-                    box-shadow: 0 20px 50px rgba(250, 129, 18, 0.2);
+                    border-color: rgba(222, 189, 171, 0.4);
+                    background: rgba(222, 189, 171, 0.08);
+                    box-shadow: 0 20px 50px rgba(222, 189, 171, 0.2);
                 }
                 
                 .feature-icon-wrapper {
                     width: 56px;
                     height: 56px;
                     border-radius: 50%;
-                    background: linear-gradient(135deg, rgba(250, 129, 18, 0.2), rgba(255, 179, 102, 0.1));
+                    background: linear-gradient(135deg, rgba(222, 189, 171, 0.2), rgba(222, 189, 171, 0.1));
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -148,13 +155,8 @@ export default function OperatorFeatures() {
                 
                 .feature-card:hover .feature-icon-wrapper {
                     transform: rotate(360deg) scale(1.1);
-                    background: linear-gradient(135deg, rgba(250, 129, 18, 0.3), rgba(255, 179, 102, 0.2));
-                    box-shadow: 0 8px 20px rgba(250, 129, 18, 0.3);
-                }
-                
-                .feature-icon {
-                    color: #FA8112 !important;
-                    font-size: 28px !important;
+                    background: linear-gradient(135deg, rgba(222, 189, 171, 0.3), rgba(222, 189, 171, 0.2));
+                    box-shadow: 0 8px 20px rgba(222, 189, 171, 0.3);
                 }
                 
                 .feature-emoji {
@@ -165,7 +167,7 @@ export default function OperatorFeatures() {
                     font-family: 'Montserrat', sans-serif;
                     font-weight: 500;
                     letter-spacing: 0.3px;
-                    color: #ffffff;
+                    color: var(--whitesmoke);
                     font-size: 16px;
                     line-height: 1.5;
                 }
@@ -177,19 +179,15 @@ export default function OperatorFeatures() {
                     right: 0;
                     bottom: 0;
                     background-image: 
-                        linear-gradient(rgba(250, 129, 18, 0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(250, 129, 18, 0.03) 1px, transparent 1px);
+                        linear-gradient(rgba(222, 189, 171, 0.03) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(222, 189, 171, 0.03) 1px, transparent 1px);
                     background-size: 50px 50px;
                     pointer-events: none;
                     opacity: 0.3;
                 }
             `}</style>
 
-            <section
-                id="operators"
-                className="operator-section py-24 relative"
-                ref={sectionRef}
-            >
+            <section id="operators" className="operator-section py-24 relative" ref={sectionRef}>
                 <div className="grid-background"></div>
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <h2 className={`operator-title text-4xl mb-12 ${isVisible ? 'visible' : ''}`}>
@@ -198,10 +196,7 @@ export default function OperatorFeatures() {
 
                     <div className="grid md:grid-cols-4 gap-6">
                         {features.map((feature, i) => (
-                            <div
-                                key={i}
-                                className={`feature-card ${isVisible ? 'visible' : ''}`}
-                            >
+                            <div key={i} className={`feature-card ${isVisible ? 'visible' : ''}`}>
                                 <div className="feature-icon-wrapper">
                                     <span className="feature-emoji">{feature.icon}</span>
                                 </div>

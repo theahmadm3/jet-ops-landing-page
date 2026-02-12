@@ -1,3 +1,4 @@
+// FinalCTA.jsx
 import { useEffect, useRef, useState } from "react";
 import Button from "@mui/material/Button";
 
@@ -27,8 +28,15 @@ export default function FinalCTA() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500;600&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .cta-section {
-                    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #1a1a1a 50%, var(--luxury-black) 100%);
                     position: relative;
                     overflow: hidden;
                 }
@@ -40,7 +48,7 @@ export default function FinalCTA() {
                     left: -10%;
                     width: 500px;
                     height: 500px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.15) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.15) 0%, transparent 70%);
                     border-radius: 50%;
                     animation: float 8s ease-in-out infinite;
                 }
@@ -52,7 +60,7 @@ export default function FinalCTA() {
                     right: -10%;
                     width: 500px;
                     height: 500px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.1) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.1) 0%, transparent 70%);
                     border-radius: 50%;
                     animation: float 8s ease-in-out infinite reverse;
                 }
@@ -65,7 +73,7 @@ export default function FinalCTA() {
                 .cta-card {
                     background: rgba(255, 255, 255, 0.03);
                     backdrop-filter: blur(10px);
-                    border: 1px solid rgba(250, 129, 18, 0.2);
+                    border: 1px solid rgba(222, 189, 171, 0.2);
                     border-radius: 12px;
                     padding: 40px 32px;
                     position: relative;
@@ -95,7 +103,7 @@ export default function FinalCTA() {
                     left: 0;
                     right: 0;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,16 +115,16 @@ export default function FinalCTA() {
                 
                 .cta-card:hover {
                     background: rgba(255, 255, 255, 0.05);
-                    border-color: rgba(250, 129, 18, 0.4);
+                    border-color: rgba(222, 189, 171, 0.4);
                     transform: translateY(-8px);
-                    box-shadow: 0 20px 50px rgba(250, 129, 18, 0.2);
+                    box-shadow: 0 20px 50px rgba(222, 189, 171, 0.2);
                 }
                 
                 .cta-title {
                     font-family: 'Cormorant Garamond', serif;
                     font-weight: 600;
                     letter-spacing: 0.5px;
-                    color: #ffffff;
+                    color: var(--whitesmoke);
                     font-size: 28px;
                     margin-bottom: 24px;
                     position: relative;
@@ -130,12 +138,12 @@ export default function FinalCTA() {
                     left: 0;
                     width: 50px;
                     height: 2px;
-                    background: linear-gradient(90deg, #FA8112, transparent);
+                    background: linear-gradient(90deg, var(--gold-dark), transparent);
                 }
                 
                 .cta-btn-primary {
-                    background: linear-gradient(135deg, #FA8112 0%, #FFB366 100%) !important;
-                    box-shadow: 0 8px 25px rgba(250, 129, 18, 0.4);
+                    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+                    box-shadow: 0 8px 25px rgba(222, 189, 171, 0.4);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                     position: relative;
                     overflow: hidden;
@@ -157,7 +165,7 @@ export default function FinalCTA() {
                 }
                 
                 .cta-btn-primary:hover {
-                    box-shadow: 0 12px 35px rgba(250, 129, 18, 0.6) !important;
+                    box-shadow: 0 12px 35px rgba(222, 189, 171, 0.6) !important;
                     transform: translateY(-3px);
                 }
                 
@@ -165,14 +173,15 @@ export default function FinalCTA() {
                     background: rgba(255, 255, 255, 0.05) !important;
                     backdrop-filter: blur(10px);
                     border: 1px solid rgba(245, 245, 245, 0.3) !important;
+                    color: var(--whitesmoke) !important;
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                 }
                 
                 .cta-btn-secondary:hover {
                     background: rgba(255, 255, 255, 0.1) !important;
-                    border-color: rgba(250, 129, 18, 0.5) !important;
+                    border-color: rgba(222, 189, 171, 0.5) !important;
                     transform: translateY(-3px);
-                    box-shadow: 0 8px 25px rgba(250, 129, 18, 0.2);
+                    box-shadow: 0 8px 25px rgba(222, 189, 171, 0.2);
                 }
                 
                 .decorative-icon {
@@ -190,23 +199,18 @@ export default function FinalCTA() {
                 }
             `}</style>
 
-            <section
-                className="cta-section py-20"
-                ref={sectionRef}
-            >
+            <section className="cta-section py-20" ref={sectionRef}>
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 relative z-10">
                     <div className={`cta-card ${isVisible ? 'visible' : ''}`}>
                         <span className="decorative-icon">✈️</span>
                         <h3 className="cta-title">Need a flight?</h3>
-                        <p
-                            style={{
-                                fontFamily: "'Montserrat', sans-serif",
-                                color: 'rgba(255, 255, 255, 0.7)',
-                                marginBottom: '24px',
-                                fontSize: '15px',
-                                lineHeight: '1.6'
-                            }}
-                        >
+                        <p style={{
+                            fontFamily: "'Montserrat', sans-serif",
+                            color: 'rgba(245, 245, 245, 0.7)',
+                            marginBottom: '24px',
+                            fontSize: '15px',
+                            lineHeight: '1.6'
+                        }}>
                             Get instant quotes from verified charter operators across Africa.
                         </p>
                         <Button
@@ -230,22 +234,20 @@ export default function FinalCTA() {
                     <div className={`cta-card ${isVisible ? 'visible' : ''}`}>
                         <span className="decorative-icon">⚙️</span>
                         <h3 className="cta-title">Charter Operator?</h3>
-                        <p
-                            style={{
-                                fontFamily: "'Montserrat', sans-serif",
-                                color: 'rgba(255, 255, 255, 0.7)',
-                                marginBottom: '24px',
-                                fontSize: '15px',
-                                lineHeight: '1.6'
-                            }}
-                        >
+                        <p style={{
+                            fontFamily: "'Montserrat', sans-serif",
+                            color: 'rgba(245, 245, 245, 0.7)',
+                            marginBottom: '24px',
+                            fontSize: '15px',
+                            lineHeight: '1.6'
+                        }}>
                             Streamline your operations with our comprehensive platform.
                         </p>
                         <Button
                             variant="outlined"
                             className="cta-btn-secondary"
                             sx={{
-                                color: "#f5f5f5",
+                                color: "var(--whitesmoke) !important",
                                 fontFamily: "'Montserrat', sans-serif",
                                 fontWeight: 500,
                                 letterSpacing: '0.5px',

@@ -15,11 +15,18 @@ export default function Header() {
     return (
         <>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+                
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
                 
                 .header-container {
-                    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-                    border-bottom: 1px solid rgba(250, 129, 18, 0.15);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #1a1a1a 100%);
+                    border-bottom: 1px solid rgba(222, 189, 171, 0.15);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                     position: relative;
                 }
@@ -31,7 +38,7 @@ export default function Header() {
                     left: 0;
                     right: 0;
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, rgba(250, 129, 18, 0.5), transparent);
+                    background: linear-gradient(90deg, transparent, var(--gold), transparent);
                     opacity: 0;
                     transition: opacity 0.4s ease;
                 }
@@ -41,9 +48,9 @@ export default function Header() {
                 }
                 
                 .header-container.scrolled {
-                    background: rgba(10, 10, 10, 0.95);
+                    background: rgba(48, 45, 44, 0.95);
                     backdrop-filter: blur(20px);
-                    border-bottom-color: rgba(250, 129, 18, 0.3);
+                    border-bottom-color: rgba(222, 189, 171, 0.3);
                     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
                 }
                 
@@ -52,7 +59,7 @@ export default function Header() {
                     font-family: 'Montserrat', sans-serif;
                     font-weight: 400;
                     letter-spacing: 0.8px;
-                    color: rgba(255, 255, 255, 0.8);
+                    color: rgba(245, 245, 245, 0.8);
                     transition: color 0.3s ease;
                     text-transform: uppercase;
                     font-size: 12px;
@@ -65,7 +72,7 @@ export default function Header() {
                     left: 0;
                     width: 0;
                     height: 2px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: var(--gold);
                     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 }
                 
@@ -74,16 +81,16 @@ export default function Header() {
                 }
                 
                 .nav-link:hover {
-                    color: #FFB366;
+                    color: var(--gold);
                 }
                 
                 .demo-button {
                     position: relative;
                     overflow: hidden;
-                    background: linear-gradient(135deg, #FA8112, #FFB366) !important;
-                    box-shadow: 0 4px 20px rgba(250, 129, 18, 0.4);
+                    background: linear-gradient(135deg, var(--gold-dark), var(--gold)) !important;
+                    box-shadow: 0 4px 20px rgba(222, 189, 171, 0.4);
                     transition: all 0.3s ease !important;
-                    border: 1px solid rgba(255, 179, 102, 0.3);
+                    border: 1px solid rgba(222, 189, 171, 0.3) !important;
                 }
                 
                 .demo-button::before {
@@ -102,7 +109,7 @@ export default function Header() {
                 }
                 
                 .demo-button:hover {
-                    box-shadow: 0 6px 30px rgba(250, 129, 18, 0.6) !important;
+                    box-shadow: 0 6px 30px rgba(222, 189, 171, 0.6) !important;
                     transform: translateY(-2px);
                 }
                 
@@ -113,8 +120,8 @@ export default function Header() {
                     right: 0;
                     bottom: 0;
                     background-image: 
-                        linear-gradient(rgba(250, 129, 18, 0.02) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(250, 129, 18, 0.02) 1px, transparent 1px);
+                        linear-gradient(rgba(222, 189, 171, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(222, 189, 171, 0.02) 1px, transparent 1px);
                     background-size: 50px 50px;
                     pointer-events: none;
                     opacity: 0.3;
@@ -139,7 +146,7 @@ export default function Header() {
                         variant="contained"
                         className="demo-button"
                         sx={{
-                            color: "#0a0a0a",
+                            color: "#302d2c",
                             fontFamily: "'Montserrat', sans-serif",
                             fontWeight: 600,
                             letterSpacing: '1px',
@@ -147,6 +154,10 @@ export default function Header() {
                             borderRadius: '4px',
                             textTransform: 'uppercase',
                             fontSize: '12px',
+                            backgroundColor: 'transparent',
+                            '&:hover': {
+                                backgroundColor: 'transparent',
+                            }
                         }}
                     >
                         Request Demo

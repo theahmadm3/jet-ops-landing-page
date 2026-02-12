@@ -1,3 +1,4 @@
+// Trust.jsx
 import { useEffect, useRef, useState } from "react";
 
 export default function Trust() {
@@ -26,6 +27,13 @@ export default function Trust() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .trust-section {
                     position: relative;
                     overflow: hidden;
@@ -39,7 +47,7 @@ export default function Trust() {
                     transform: translate(-50%, -50%);
                     width: 600px;
                     height: 600px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.03) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.03) 0%, transparent 70%);
                     border-radius: 50%;
                     pointer-events: none;
                 }
@@ -59,7 +67,7 @@ export default function Trust() {
                     font-family: 'Montserrat', sans-serif;
                     font-weight: 300;
                     letter-spacing: 1px;
-                    color: #666666;
+                    color: var(--luxury-black);
                     font-size: 13px;
                     text-transform: uppercase;
                     margin-bottom: 24px;
@@ -75,12 +83,12 @@ export default function Trust() {
                     transform: translateX(-50%);
                     width: 40px;
                     height: 1px;
-                    background: linear-gradient(90deg, transparent, #FA8112, transparent);
+                    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
                 }
                 
                 .logo-container {
                     background: white;
-                    border: 2px solid rgba(250, 129, 18, 0.1);
+                    border: 2px solid rgba(222, 189, 171, 0.1);
                     border-radius: 12px;
                     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
                     padding: 24px 36px;
@@ -109,7 +117,7 @@ export default function Trust() {
                     background: linear-gradient(
                         45deg,
                         transparent 30%,
-                        rgba(250, 129, 18, 0.05) 50%,
+                        rgba(222, 189, 171, 0.05) 50%,
                         transparent 70%
                     );
                     animation: shimmer 3s ease-in-out infinite;
@@ -122,8 +130,8 @@ export default function Trust() {
                 
                 .logo-container:hover {
                     transform: scale(1.05);
-                    border-color: rgba(250, 129, 18, 0.3);
-                    box-shadow: 0 15px 50px rgba(250, 129, 18, 0.15);
+                    border-color: rgba(222, 189, 171, 0.3);
+                    box-shadow: 0 15px 50px rgba(222, 189, 171, 0.15);
                 }
                 
                 .logo-placeholder {
@@ -131,8 +139,8 @@ export default function Trust() {
                     height: 80px;
                     background: linear-gradient(
                         135deg,
-                        rgba(250, 129, 18, 0.1) 0%,
-                        rgba(255, 179, 102, 0.05) 100%
+                        rgba(222, 189, 171, 0.1) 0%,
+                        rgba(222, 189, 171, 0.05) 100%
                     );
                     border-radius: 8px;
                     display: flex;
@@ -142,7 +150,7 @@ export default function Trust() {
                     font-weight: 600;
                     font-size: 24px;
                     letter-spacing: 2px;
-                    color: #FA8112;
+                    color: var(--gold-dark);
                     position: relative;
                 }
                 
@@ -155,26 +163,19 @@ export default function Trust() {
                 }
             `}</style>
 
-            <section
-                className="trust-section max-w-7xl mx-auto px-6 py-20 text-center relative"
-                ref={sectionRef}
-            >
+            <section className="trust-section max-w-7xl mx-auto px-6 py-20 text-center relative" ref={sectionRef}>
                 <div className={`trust-content ${isVisible ? 'visible' : ''}`}>
-                    <p className="trust-label">
-                        Trusted Partner
-                    </p>
+                    <p className="trust-label">Trusted Partner</p>
                     <div className={`logo-container ${isVisible ? 'visible' : ''}`}>
                         <img src="/flybird.png" alt="Flybird Logo" className="h-20 w-auto" />
                     </div>
-                    <p
-                        className="mt-6 text-gray-600"
-                        style={{
-                            fontFamily: "'Montserrat', sans-serif",
-                            fontSize: '14px',
-                            fontWeight: '300',
-                            letterSpacing: '0.5px'
-                        }}
-                    >
+                    <p className="mt-6 text-gray-600" style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '14px',
+                        fontWeight: '300',
+                        letterSpacing: '0.5px',
+                        color: 'var(--luxury-black)'
+                    }}>
                         ERP deployed for Flybird Aviation
                     </p>
                 </div>

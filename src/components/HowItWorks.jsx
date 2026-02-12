@@ -1,3 +1,4 @@
+// HowItWorks.jsx
 import { useEffect, useRef, useState } from "react";
 
 export default function HowItWorks() {
@@ -33,10 +34,18 @@ export default function HowItWorks() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .how-it-works-title {
                     font-family: 'Cormorant Garamond', serif;
                     font-weight: 400;
                     letter-spacing: 0.5px;
+                    color: var(--luxury-black);
                     opacity: 0;
                     transform: translateY(30px);
                     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -52,7 +61,7 @@ export default function HowItWorks() {
                     display: block;
                     width: 80px;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     margin-top: 16px;
                     border-radius: 2px;
                 }
@@ -87,7 +96,7 @@ export default function HowItWorks() {
                     left: 0;
                     right: 0;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,15 +108,15 @@ export default function HowItWorks() {
                 
                 .step-card:hover {
                     transform: translateY(-8px);
-                    box-shadow: 0 12px 40px rgba(250, 129, 18, 0.15);
-                    border-color: rgba(250, 129, 18, 0.2);
+                    box-shadow: 0 12px 40px rgba(222, 189, 171, 0.15);
+                    border-color: rgba(222, 189, 171, 0.2);
                 }
                 
                 .step-number {
                     font-family: 'Cormorant Garamond', serif;
                     font-size: 48px;
                     font-weight: 600;
-                    background: linear-gradient(135deg, #FA8112, #FFB366);
+                    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
@@ -136,7 +145,7 @@ export default function HowItWorks() {
                     font-family: 'Montserrat', sans-serif;
                     font-weight: 500;
                     letter-spacing: 0.3px;
-                    color: #222222;
+                    color: var(--luxury-black);
                     line-height: 1.5;
                 }
                 
@@ -146,7 +155,7 @@ export default function HowItWorks() {
                     right: -12%;
                     width: 24%;
                     height: 2px;
-                    background: linear-gradient(90deg, rgba(250, 129, 18, 0.3), rgba(250, 129, 18, 0.1));
+                    background: linear-gradient(90deg, rgba(222, 189, 171, 0.3), rgba(222, 189, 171, 0.1));
                     transform: translateY(-50%);
                     opacity: 0;
                     transition: opacity 0.6s ease;
@@ -163,11 +172,7 @@ export default function HowItWorks() {
                 }
             `}</style>
 
-            <section
-                id="how-it-works"
-                className="max-w-7xl mx-auto px-6 py-24"
-                ref={sectionRef}
-            >
+            <section id="how-it-works" className="max-w-7xl mx-auto px-6 py-24" ref={sectionRef}>
                 <h2 className={`how-it-works-title text-4xl mb-12 ${isVisible ? 'visible' : ''}`}>
                     How It Works
                 </h2>

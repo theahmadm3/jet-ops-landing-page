@@ -1,3 +1,4 @@
+// WhyJETOps.jsx
 import { useEffect, useRef, useState } from "react";
 
 const reasons = [
@@ -49,8 +50,15 @@ export default function WhyJETOps() {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap');
                 
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
+                
                 .why-section {
-                    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+                    background: linear-gradient(180deg, var(--whitesmoke) 0%, #fafafa 100%);
                     position: relative;
                 }
                 
@@ -61,7 +69,7 @@ export default function WhyJETOps() {
                     right: 10%;
                     width: 400px;
                     height: 400px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.05) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.05) 0%, transparent 70%);
                     border-radius: 50%;
                     transform: translateY(-50%);
                     pointer-events: none;
@@ -71,7 +79,7 @@ export default function WhyJETOps() {
                     font-family: 'Cormorant Garamond', serif;
                     font-weight: 600;
                     letter-spacing: 0.5px;
-                    color: #222222;
+                    color: var(--luxury-black);
                     text-align: center;
                     opacity: 0;
                     transform: translateY(30px);
@@ -88,7 +96,7 @@ export default function WhyJETOps() {
                     display: block;
                     width: 80px;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     margin: 16px auto 0;
                     border-radius: 2px;
                 }
@@ -123,7 +131,7 @@ export default function WhyJETOps() {
                     left: 0;
                     right: 0;
                     height: 4px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -140,7 +148,7 @@ export default function WhyJETOps() {
                     right: -100px;
                     width: 200px;
                     height: 200px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.08) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.08) 0%, transparent 70%);
                     border-radius: 50%;
                     transition: all 0.6s ease;
                 }
@@ -152,8 +160,8 @@ export default function WhyJETOps() {
                 
                 .reason-card:hover {
                     transform: translateY(-10px) scale(1.02);
-                    box-shadow: 0 20px 50px rgba(250, 129, 18, 0.15);
-                    border-color: rgba(250, 129, 18, 0.2);
+                    box-shadow: 0 20px 50px rgba(222, 189, 171, 0.15);
+                    border-color: rgba(222, 189, 171, 0.2);
                 }
                 
                 .reason-icon {
@@ -173,7 +181,7 @@ export default function WhyJETOps() {
                     font-family: 'Montserrat', sans-serif;
                     font-weight: 600;
                     letter-spacing: 0.3px;
-                    color: #222222;
+                    color: var(--luxury-black);
                     font-size: 18px;
                     margin-bottom: 12px;
                     line-height: 1.4;
@@ -192,7 +200,7 @@ export default function WhyJETOps() {
                     position: absolute;
                     width: 40px;
                     height: 2px;
-                    background: linear-gradient(90deg, #FA8112, transparent);
+                    background: linear-gradient(90deg, var(--gold-dark), transparent);
                     top: 28px;
                     left: 28px;
                     opacity: 0;
@@ -205,10 +213,7 @@ export default function WhyJETOps() {
                 }
             `}</style>
 
-            <section
-                className="why-section py-24"
-                ref={sectionRef}
-            >
+            <section className="why-section py-24" ref={sectionRef}>
                 <div className="max-w-7xl mx-auto px-6">
                     <h2 className={`why-title text-4xl mb-16 ${isVisible ? 'visible' : ''}`}>
                         Why JETOps

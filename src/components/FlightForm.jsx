@@ -1,3 +1,4 @@
+// FlightForm.jsx
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -23,6 +24,13 @@ export default function FlightForm() {
         <>
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+                
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
                 
                 .form-container {
                     position: relative;
@@ -50,16 +58,16 @@ export default function FlightForm() {
                 .luxury-input .MuiOutlinedInput-root {
                     font-family: 'Montserrat', sans-serif;
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    background: rgba(250, 129, 18, 0.02);
+                    background: rgba(222, 189, 171, 0.02);
                 }
                 
                 .luxury-input .MuiOutlinedInput-root:hover {
-                    background: rgba(250, 129, 18, 0.04);
+                    background: rgba(222, 189, 171, 0.04);
                 }
                 
                 .luxury-input .MuiOutlinedInput-root.Mui-focused {
-                    background: rgba(250, 129, 18, 0.05);
-                    box-shadow: 0 4px 12px rgba(250, 129, 18, 0.1);
+                    background: rgba(222, 189, 171, 0.05);
+                    box-shadow: 0 4px 12px rgba(222, 189, 171, 0.1);
                 }
                 
                 .luxury-input .MuiOutlinedInput-notchedOutline {
@@ -68,11 +76,11 @@ export default function FlightForm() {
                 }
                 
                 .luxury-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-                    border-color: rgba(250, 129, 18, 0.3);
+                    border-color: rgba(222, 189, 171, 0.3);
                 }
                 
                 .luxury-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-                    border-color: #FA8112;
+                    border-color: var(--gold-dark);
                     border-width: 2px;
                 }
                 
@@ -83,12 +91,12 @@ export default function FlightForm() {
                 }
                 
                 .luxury-input .MuiInputLabel-root.Mui-focused {
-                    color: #FA8112;
+                    color: var(--gold-dark);
                 }
                 
                 .submit-button {
-                    background: linear-gradient(135deg, #FA8112 0%, #FFB366 100%) !important;
-                    box-shadow: 0 8px 25px rgba(250, 129, 18, 0.35);
+                    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+                    box-shadow: 0 8px 25px rgba(222, 189, 171, 0.35);
                     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
                     position: relative;
                     overflow: hidden;
@@ -113,7 +121,7 @@ export default function FlightForm() {
                 }
                 
                 .submit-button:hover {
-                    box-shadow: 0 12px 35px rgba(250, 129, 18, 0.5) !important;
+                    box-shadow: 0 12px 35px rgba(222, 189, 171, 0.5) !important;
                     transform: translateY(-3px);
                 }
                 

@@ -5,7 +5,14 @@ export default function Hero() {
     return (
         <>
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap');
+                
+                :root {
+                    --gold: #debdab;
+                    --gold-dark: #bd9c8a;
+                    --luxury-black: #302d2c;
+                    --whitesmoke: #f5f5f5;
+                }
                 
                 .hero-section {
                     position: relative;
@@ -18,15 +25,21 @@ export default function Hero() {
                     right: -100px;
                     width: 400px;
                     height: 400px;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.1) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.1) 0%, transparent 70%);
                     border-radius: 50%;
                     pointer-events: none;
                     animation: pulse 8s ease-in-out infinite;
                 }
                 
                 @keyframes pulse {
-                    0%, 100% { transform: scale(1); opacity: 0.5; }
-                    50% { transform: scale(1.2); opacity: 0.8; }
+                    0%, 100% { 
+                        transform: scale(1); 
+                        opacity: 0.5; 
+                    }
+                    50% { 
+                        transform: scale(1.2); 
+                        opacity: 0.8; 
+                    }
                 }
                 
                 .booking-card {
@@ -48,15 +61,15 @@ export default function Hero() {
                     left: 0;
                     right: 0;
                     height: 3px;
-                    background: linear-gradient(90deg, #FA8112, #FFB366);
+                    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
                 }
                 
                 .operator-card {
                     opacity: 0;
                     transform: translateY(30px);
                     animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
-                    background: linear-gradient(135deg, #222222 0%, #3a3a3a 100%);
-                    border: 1px solid rgba(250, 129, 18, 0.2);
+                    background: linear-gradient(135deg, var(--luxury-black) 0%, #3a3a3a 100%);
+                    border: 1px solid rgba(222, 189, 171, 0.2);
                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
                     border-radius: 8px;
                     position: relative;
@@ -70,7 +83,7 @@ export default function Hero() {
                     right: -50%;
                     width: 200%;
                     height: 200%;
-                    background: radial-gradient(circle, rgba(250, 129, 18, 0.1) 0%, transparent 70%);
+                    background: radial-gradient(circle, rgba(222, 189, 171, 0.1) 0%, transparent 70%);
                     animation: rotate 20s linear infinite;
                 }
                 
@@ -87,11 +100,12 @@ export default function Hero() {
                 }
                 
                 .section-title {
-                    font-family: 'Cormorant Garamond', serif;
+                    font-family: 'DM Serif Display', serif;
                     font-weight: 400;
                     letter-spacing: 0.5px;
                     position: relative;
                     display: inline-block;
+                    color: var(--luxury-black);
                 }
                 
                 .section-title::after {
@@ -101,12 +115,12 @@ export default function Hero() {
                     left: 0;
                     width: 60px;
                     height: 2px;
-                    background: linear-gradient(90deg, #FA8112, transparent);
+                    background: linear-gradient(90deg, var(--gold-dark), transparent);
                 }
                 
                 .luxury-btn-primary {
-                    background: linear-gradient(135deg, #FA8112 0%, #FFB366 100%) !important;
-                    box-shadow: 0 6px 20px rgba(250, 129, 18, 0.35);
+                    background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 100%) !important;
+                    box-shadow: 0 6px 20px rgba(222, 189, 171, 0.35);
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
                     position: relative;
                     overflow: hidden;
@@ -128,31 +142,33 @@ export default function Hero() {
                 }
                 
                 .luxury-btn-primary:hover {
-                    box-shadow: 0 8px 30px rgba(250, 129, 18, 0.5) !important;
+                    box-shadow: 0 8px 30px rgba(222, 189, 171, 0.5) !important;
                     transform: translateY(-2px);
                 }
                 
                 .luxury-btn-secondary {
                     border: 1px solid rgba(34, 34, 34, 0.2) !important;
-                    color: #222222 !important;
+                    color: var(--color-whitesmoke) !important;
                     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                    background: rgba(245, 245, 245, 0.1) !important;
+                    backdrop-filter: blur(10px);
                 }
                 
                 .luxury-btn-secondary:hover {
-                    border-color: #FA8112 !important;
-                    background: rgba(250, 129, 18, 0.05) !important;
+                    border-color: var(--gold-dark) !important;
+                    background: rgba(222, 189, 171, 0.05) !important;
                     transform: translateY(-2px);
-                    box-shadow: 0 4px 15px rgba(250, 129, 18, 0.15);
+                    box-shadow: 0 4px 15px rgba(222, 189, 171, 0.15);
                 }
                 
                 .operator-text {
-                    color: #f5f5f5;
+                    color: var(--whitesmoke);
                     font-family: 'Montserrat', sans-serif;
                 }
                 
                 .operator-title {
-                    font-family: 'Cormorant Garamond', serif;
-                    color: #ffffff;
+                    font-family: 'DM Serif Display', serif;
+                    color: var(--whitesmoke);
                     font-weight: 600;
                     letter-spacing: 0.5px;
                 }
@@ -164,7 +180,12 @@ export default function Hero() {
                     <h1 className="section-title text-4xl mb-4">
                         Book a Private Jet in Minutes
                     </h1>
-                    <p className="mb-8 text-gray-600" style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '15px', lineHeight: '1.7' }}>
+                    <p className="mb-8 text-gray-600" style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontSize: '15px',
+                        lineHeight: '1.7',
+                        color: 'var(--luxury-black)'
+                    }}>
                         Submit one request. Receive quotes from verified charter operators.
                     </p>
                     <FlightForm />
@@ -176,7 +197,11 @@ export default function Hero() {
                         <h2 className="operator-title text-3xl mb-4">
                             Run Your Charter Operations on JETOps
                         </h2>
-                        <p className="operator-text mb-8" style={{ fontSize: '15px', lineHeight: '1.7', opacity: 0.9 }}>
+                        <p className="operator-text mb-8" style={{
+                            fontSize: '15px',
+                            lineHeight: '1.7',
+                            opacity: 0.9
+                        }}>
                             Manage aircraft, bookings, maintenance, brokers and payments in one system.
                         </p>
 
@@ -185,7 +210,7 @@ export default function Hero() {
                                 variant="contained"
                                 className="luxury-btn-primary"
                                 sx={{
-                                    color: "#222222",
+                                    color: "var(--luxury-black)",
                                     fontFamily: "'Montserrat', sans-serif",
                                     fontWeight: 600,
                                     letterSpacing: '0.5px',
@@ -207,9 +232,11 @@ export default function Hero() {
                                     padding: '12px 32px',
                                     borderRadius: '4px',
                                     textTransform: 'none',
-                                    background: 'rgba(255, 255, 255, 0.1)',
-                                    backdropFilter: 'blur(10px)',
-                                    color: '#ffffff !important',
+                                    color: '#fff !important',
+                                    borderColor: 'rgba(245, 245, 245, 0.3) !important',
+                                    '&:hover': {
+                                        borderColor: 'var(--gold-dark) !important',
+                                    }
                                 }}
                             >
                                 View Features
