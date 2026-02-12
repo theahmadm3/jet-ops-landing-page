@@ -114,7 +114,7 @@ export default function CinematicHero() {
                 .hero-overlay {
                     background: linear-gradient(
                         135deg,
-                        rgba(0, 0, 0, 0.6) 0%,
+                        rgba(0, 0, 0, 1) 0%,
                         rgba(34, 34, 34, 0.4) 50%,
                         color-mix(in srgb, var(--color-gold) 15%, transparent) 100%
                     );
