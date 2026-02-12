@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 
 const images = [
-    "/src/assets/planes/plane1.jpg",
-    "/src/assets/planes/plane2.jpg",
-    "/src/assets/planes/plane3.jpg",
+    "https://res.cloudinary.com/dyjas9x16/image/upload/v1770858549/plane1_ha50a8.jpg",
+    "https://res.cloudinary.com/dyjas9x16/image/upload/v1770858563/plane2_kubj1l.jpg",
+    "https://res.cloudinary.com/dyjas9x16/image/upload/v1770858550/plane3_h9mrmd.jpg",
 ];
 
 export default function CinematicHero() {
